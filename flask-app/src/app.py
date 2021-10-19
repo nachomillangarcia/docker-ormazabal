@@ -8,6 +8,6 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
 
-    return f'''Hey, we have Flask in a Docker container!!!! '''
+    return f'''Hey, we have Flask in a Docker container!!!! no cache'''
 
 app.run(debug=True, host='0.0.0.0')

@@ -10,6 +10,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY src .
 
-ENTRYPOINT ["python", "app.py"]
+COPY entrypoint.sh .
 
-CMD [""]
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
+
+CMD ["python", "app.py"]

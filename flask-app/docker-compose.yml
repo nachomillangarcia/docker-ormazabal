@@ -11,9 +11,14 @@ services:
     - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: pass
+    volumes:
+    - mysql-data:/var/lib/mysql
 
   python-app:
     build: .
-    image: python-flask
+    image: nachomillangarcia/python-flask
     ports:
     - 5000:5000
+
+volumes:
+  mysql-data:

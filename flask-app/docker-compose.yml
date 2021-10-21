@@ -19,6 +19,7 @@ services:
     image: nachomillangarcia/python-flask
     ports:
     - 5000:5000
+    command: ["python", "app.py"]
 
 volumes:
   mysql-data:

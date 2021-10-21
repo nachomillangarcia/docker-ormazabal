@@ -12,7 +12,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: pass
     volumes:
-    - mysql-data:/var/lib/mysql
+    - mysql-data:/var/lib/mysql:rw
 
   python-app:
     build: .

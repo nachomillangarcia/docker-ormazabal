@@ -1,4 +1,4 @@
-FROM gcc
+FROM gcc AS build
 
 WORKDIR /app
 
@@ -9,5 +9,10 @@ COPY CMakeLists.txt CMakeLists.txt
 COPY main.cpp main.cpp
 
 RUN cmake . && make
+
+
+FROM ubuntu
+
+COPY --from=build /app/helloworld ./helloworld
 
 CMD ["./helloworld"]

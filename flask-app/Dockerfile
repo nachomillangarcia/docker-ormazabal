@@ -1,5 +1,9 @@
 FROM python:3.10
 
+ARG PYTHON_VERSION=3.10
+ARG PIP_VERSION=3
+ARG AWS_KEY
+
 #Comments
 
 WORKDIR /app
@@ -7,6 +11,8 @@ WORKDIR /app
 ENV NONINTERACTIVE=true FOO=BAR
 
 COPY requirements.txt ./
+
+RUN echo "$AWS_KEY"
 
 RUN pip install --no-cache-dir -r requirements.txt
 

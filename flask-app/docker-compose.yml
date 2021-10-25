@@ -17,7 +17,10 @@ services:
     - my-network
 
   python-app:
-    build: .
+    build:
+      context: .
+      args:
+        PYTHON_VERSION: 3.9
     image: nachomillangarcia/python-flask
     ports:
     - 5000:5000

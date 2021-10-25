@@ -4,15 +4,17 @@ services:
     image: nginx
     ports:
     - 8080:80
+    networks: 
+    - my-network
 
   mysql:
     image: mysql
-    ports:
-    - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: pass
     volumes:
     - mysql-data:/var/lib/mysql:rw
+    networks: 
+    - my-network
 
   python-app:
     build: .
@@ -20,6 +22,18 @@ services:
     ports:
     - 5000:5000
     command: ["python", "app.py"]
+    networks: 
+    - my-network
+
+  ubuntu:
+    image: ubuntu
+    entrypoint: ["/bin/bash"]
+    command: ["-c", "sleep 10000"]
+    networks: 
+    - my-network
 
 volumes:
   mysql-data:
+
+networks:
+  my-network:

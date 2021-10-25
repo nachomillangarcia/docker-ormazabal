@@ -24,9 +24,13 @@ services:
     image: nachomillangarcia/python-flask
     ports:
     - 5000:5000
-    command: ["python", "app.py"]
+    command: ["python", "app.py", "--my_argument=bar"]
     networks: 
     - my-network
+    env_file: production.env
+    volumes:
+    - ./productionconfig.py:/app/config.py:ro
+
 
   ubuntu:
     image: ubuntu

@@ -16,9 +16,14 @@ def hello_world():
     # Leer archivo configuracion
     password = cfg.password
 
+    # Leer argumentos linea de comandos
+    args = str(sys.argv)
+
     return f'''Hey, we have Flask in a Docker container!!!! 
     <br> envvar: {foo} 
     <br> password: {password}
+    <br> arguments: {args}
+    
     '''
 
 app.run(debug=True, host='0.0.0.0')

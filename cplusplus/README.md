@@ -1,8 +1,8 @@
 ### Construir y ejecutar con Docker
 
-```docker build -t python-flask .```
+```docker build -t cplusplus .```
 
-```docker run -d --name flask -p 5000:5000 python-flask```
+```docker run -d --name cplusplus cplusplus```
 
 ### docker-compose
 
@@ -10,3 +10,4 @@
 
 ``` docker-compose up -d ```
 
+s

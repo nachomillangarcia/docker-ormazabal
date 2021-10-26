@@ -10,4 +10,4 @@ En este repositorio encontrarás todos los recursos que se han visto en el curso
 
 En cada directorio se encuentra el código para desplegar cada aplicación:
 - [flask-app](flask-app): Ejemplo de webapp con Flask, con un Dockerfile optimizado y docker-compose
-- [cplusplus](front): Ejemplo de programa en C++ con docker y Dockerfile multi-stage
+- [cplusplus](cplusplus): Ejemplo de programa en C++ con docker y Dockerfile multi-stage

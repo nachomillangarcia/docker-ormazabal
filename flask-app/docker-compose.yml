@@ -31,7 +31,6 @@ services:
     volumes:
     - ./productionconfig.py:/app/config.py:ro
 
-
   ubuntu:
     image: ubuntu
     entrypoint: ["/bin/bash"]

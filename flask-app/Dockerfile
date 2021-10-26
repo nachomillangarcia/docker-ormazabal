@@ -24,7 +24,7 @@ COPY entrypoint.sh .
 
 RUN chmod +x entrypoint.sh
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 CMD [ "curl", "-f", "http://localhost:5000" ]
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 CMD [ "curl", "-f", "http://localhost:5000/failpage" ]
 
 ENTRYPOINT ["./entrypoint.sh"]
 
